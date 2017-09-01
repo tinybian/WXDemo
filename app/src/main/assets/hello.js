@@ -1,3 +1,4 @@
+// { "framework": "Weex" }
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -42,21 +43,21 @@
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	var __weex_template__ = __webpack_require__(1)
 
-	__weex_define__('@weex-component/63d2da657953c1add8d6eab5fae4f3f0', [], function(__weex_require__, __weex_exports__, __weex_module__) {
+	__weex_define__('@weex-component/8e2a728ca214c2831ef401b9169488f7', [], function(__weex_require__, __weex_exports__, __weex_module__) {
 
 	    __weex_module__.exports.template = __weex_template__
 
 	})
 
-	__weex_bootstrap__('@weex-component/63d2da657953c1add8d6eab5fae4f3f0',undefined,undefined)
+	__weex_bootstrap__('@weex-component/8e2a728ca214c2831ef401b9169488f7',undefined,undefined)
 
-/***/ },
+/***/ }),
 /* 1 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	module.exports = {
 	  "type": "div",
@@ -69,9 +70,18 @@
 	      "attr": {
 	        "value": "Hello World."
 	      }
+	    },
+	    {
+	      "type": "text",
+	      "style": {
+	        "fontSize": 100
+	      },
+	      "attr": {
+	        "value": "Hello World."
+	      }
 	    }
 	  ]
 	}
 
-/***/ }
+/***/ })
 /******/ ]);

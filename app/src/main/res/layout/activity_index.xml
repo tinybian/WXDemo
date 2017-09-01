@@ -14,19 +14,25 @@
 
     <Button
             android:layout_weight="1"
-            android:text="从本地加载JavaScript"
+            android:text="利用自建网络库加载图片"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/btn_local"/>
     <Button
+        android:layout_weight="1"
+        android:text="利用自建网络库加载图片(不使用缓存)"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_local_no_cache"/>
+    <Button
             android:layout_weight="1"
-            android:text="从网络加载JavaScript"
+            android:text="利用原生网络库加载图片"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/btn_network"/>
     <Button android:layout_weight="1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="使用Fragment加载Weex"
+            android:text="视频组件"
             android:id="@+id/btn_fragment"/>
 </LinearLayout>

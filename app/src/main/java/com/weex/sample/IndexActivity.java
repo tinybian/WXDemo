@@ -19,17 +19,24 @@ public class IndexActivity extends AppCompatActivity {
       }
     });
 
+    findViewById(R.id.btn_local_no_cache).setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        startActivity(new Intent(IndexActivity.this, LocalNoCacheActivity.class));
+      }
+    });
+
     findViewById(R.id.btn_network).setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
-        startActivity(new Intent(IndexActivity.this, NetworkActivity.class));
+        startActivity(new Intent(IndexActivity.this, NativeActivity.class));
       }
     });
 
     findViewById(R.id.btn_fragment).setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
-        startActivity(new Intent(IndexActivity.this, WXFragmentActivity.class));
+        startActivity(new Intent(IndexActivity.this, VideoActivity.class));
       }
     });
   }

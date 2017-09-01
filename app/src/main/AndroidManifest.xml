@@ -6,12 +6,12 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 
     <application
-            android:name=".WXApplication"
-            android:allowBackup="true"
-            android:icon="@mipmap/ic_launcher"
-            android:label="@string/app_name"
-            android:supportsRtl="true"
-            android:theme="@style/AppTheme">
+        android:name=".WXApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
         <activity android:name=".IndexActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -21,12 +21,14 @@
         </activity>
         <activity android:name=".LocalActivity">
         </activity>
-        <activity android:name=".NetworkActivity">
+        <activity android:name=".NativeActivity">
         </activity>
         <activity
-                android:name=".WXFragmentActivity"
-                android:label="@string/title_activity_fragment"
-                android:theme="@style/AppTheme.NoActionBar">
+            android:name=".VideoActivity"
+            android:label="@string/title_activity_fragment"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity android:name=".LocalNoCacheActivity">
         </activity>
     </application>
 

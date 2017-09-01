@@ -2,6 +2,12 @@ package com.weex.sample;
 
 import android.app.Application;
 
+import com.google.android.exoplayer2.upstream.DataSource;
+import com.google.android.exoplayer2.upstream.DefaultBandwidthMeter;
+import com.google.android.exoplayer2.upstream.DefaultDataSourceFactory;
+import com.google.android.exoplayer2.upstream.DefaultHttpDataSourceFactory;
+import com.google.android.exoplayer2.upstream.HttpDataSource;
+import com.google.android.exoplayer2.util.Util;
 import com.taobao.weex.InitConfig;
 import com.taobao.weex.WXSDKEngine;
 import com.taobao.weex.common.WXException;
@@ -23,6 +29,7 @@ public class WXApplication extends Application {
   @Override
   public void onCreate() {
     super.onCreate();
+    INSTANCE = this;
     InitConfig config = new InitConfig.Builder().setImgAdapter(new ImageAdapter()).build();
     WXSDKEngine.initialize(this, config);
     try {
@@ -31,5 +38,22 @@ public class WXApplication extends Application {
     } catch (WXException e) {
       e.printStackTrace();
     }
+  }
+	public boolean useExtensionRenderers() {
+		return BuildConfig.FLAVOR.equals("withExtensions");
+	}
+
+  public DataSource.Factory buildDataSourceFactory(DefaultBandwidthMeter bandwidthMeter) {
+    return new DefaultDataSourceFactory(this, bandwidthMeter,
+            buildHttpDataSourceFactory(bandwidthMeter));
+  }
+
+  public HttpDataSource.Factory buildHttpDataSourceFactory(DefaultBandwidthMeter bandwidthMeter) {
+    return new DefaultHttpDataSourceFactory(Util.getUserAgent(this, "ExoPlayerDemo"), bandwidthMeter);
+  }
+
+  private static WXApplication INSTANCE;
+  public static WXApplication getInstance() {
+    return INSTANCE;
   }
 }

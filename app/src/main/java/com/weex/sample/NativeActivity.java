@@ -4,8 +4,9 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
 
-import com.bumptech.glide.Glide;
 import com.taobao.weex.IWXRenderListener;
 import com.taobao.weex.WXSDKInstance;
 import com.taobao.weex.common.WXRenderStrategy;
@@ -15,15 +16,15 @@ import com.weex.sample.common.Constant;
 import java.util.HashMap;
 import java.util.Map;
 
-public class LocalActivity extends AppCompatActivity implements IWXRenderListener {
+public class NativeActivity extends AppCompatActivity implements IWXRenderListener {
   WXSDKInstance mWXSDKInstance;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
-    PreferenceManager.getDefaultSharedPreferences(this).edit().putInt(Constant.PREF_IMAGE_CACHE, Constant.USE_CACHE).apply();
-	  
+    PreferenceManager.getDefaultSharedPreferences(this).edit().putInt(Constant.PREF_IMAGE_CACHE, Constant.NATIVE_METHOD).apply();
+
     mWXSDKInstance = new WXSDKInstance(this);
     mWXSDKInstance.registerRenderListener(this);
     /**
